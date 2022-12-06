@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const CanbanContainer = styled.div`
-  /* background-color: yellow; */
-
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -44,9 +42,6 @@ export const ButtonsRounded = styled.div`
 
   width: 119px;
   height: 40px;
-
-  /* Black/Main Black */
-
   color: #ffffff;
   flex: none;
   order: 0;
@@ -59,7 +54,6 @@ export const ButtonsRoundedArrowed = styled(ButtonsRounded)`
 `;
 
 export const CanbanBody = styled.div`
-  /* background-color: blue; */
   flex-grow: 1;
   display: flex;
   align-items: stretch;

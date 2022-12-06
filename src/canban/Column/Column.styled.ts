@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IS_DEV_MODE } from "../../consts";
 
 export const ColumnStyled = styled.div`
   flex-grow: 1;
@@ -41,12 +42,13 @@ export const ColumnBody = styled.div<{ isLast?: boolean }>`
   flex-grow: 1;
 `;
 
-export const Card = styled.div<{
+export const CardStyled = styled.div<{
   color: string;
   time: string;
   isDone?: boolean;
 }>`
-  background-color: ${({ color }) => color};
+  background-color: ${({ color, isDone }) => (isDone ? "#dddddd" : color)};
+  text-decoration: ${({ isDone }) => (isDone ? "line-through" : "none")};
   color: #222222;
   font-weight: 400;
   font-size: 14px;
@@ -63,4 +65,20 @@ export const Card = styled.div<{
     font-size: 13px;
     content: "${({ time }) => time}";
   }
+`;
+
+export const DnDCardMask = styled.div`
+  border: ${IS_DEV_MODE ? "solid red 1px" : "none"};
+  position: absolute;
+  top: -45px;
+  bottom: 45px;
+  left: 0px;
+  width: 100%;
+`;
+
+export const DnDColumnMask = styled.div`
+  border: ${IS_DEV_MODE ? "solid red 1px" : "none"};
+  flex-grow: 1;
+  position: relative;
+  top: -45px;
 `;
