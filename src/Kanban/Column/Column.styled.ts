@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { IS_DEV_MODE } from "../../consts";
 
 export const ColumnStyled = styled.div`
   flex-grow: 1;
@@ -67,8 +66,8 @@ export const CardStyled = styled.div<{
   }
 `;
 
-export const DnDCardMask = styled.div`
-  border: ${IS_DEV_MODE ? "solid red 1px" : "none"};
+export const DnDCardMask = styled.div<{ isDevMode?: boolean }>`
+  border: ${({ isDevMode }) => (isDevMode ? "solid red 1px" : "none")};
   position: absolute;
   top: -45px;
   bottom: 45px;
@@ -76,8 +75,8 @@ export const DnDCardMask = styled.div`
   width: 100%;
 `;
 
-export const DnDColumnMask = styled.div`
-  border: ${IS_DEV_MODE ? "solid red 1px" : "none"};
+export const DnDColumnMask = styled.div<{ isDevMode?: boolean }>`
+  border: ${({ isDevMode }) => (isDevMode ? "solid red 1px" : "none")};
   flex-grow: 1;
   position: relative;
   top: -45px;

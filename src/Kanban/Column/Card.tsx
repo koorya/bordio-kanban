@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDrag, useDrop } from "react-dnd";
+import { UserContext } from "../../Context";
 import { CardInserter, CardType } from "../controller/CardController";
 import { CardStyled, DnDCardMask } from "./Column.styled";
 export const Card = ({
@@ -31,6 +32,8 @@ export const Card = ({
     },
   }));
 
+  const { isDevMode } = useContext(UserContext);
+
   return (
     <div
       style={{
@@ -49,7 +52,7 @@ export const Card = ({
         {title}
       </CardStyled>
 
-      {isDragging && <DnDCardMask ref={drop} />}
+      {isDragging && <DnDCardMask isDevMode={isDevMode} ref={drop} />}
     </div>
   );
 };

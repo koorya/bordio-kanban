@@ -1,19 +1,10 @@
 import React, { useMemo } from "react";
 import { useDragDropManager, useDrop } from "react-dnd";
 import { CreateColumn } from "./AddColumn/CreateColumn";
-import {
-  KanbanBody,
-  KanbanContainer,
-  KanbanHeader,
-  ButtonsRounded,
-  ButtonsRoundedArrowed,
-  HeaderGroup,
-  Avatar,
-  SearchInput,
-  Notification,
-} from "./Kanban.styled";
+import { KanbanBody, KanbanContainer } from "./Kanban.styled";
 import { Column } from "./Column/Column";
 import { getCardController } from "./controller/CardController";
+import { KanbanHeader } from "./KanbanHeader";
 
 export const Kanban = () => {
   const dndManager = useDragDropManager();
@@ -31,19 +22,7 @@ export const Kanban = () => {
 
   return (
     <KanbanContainer ref={drop}>
-      <KanbanHeader>
-        <HeaderGroup>
-          <ButtonsRounded>+ Add new</ButtonsRounded>
-          <ButtonsRoundedArrowed>Kanban</ButtonsRoundedArrowed>
-          <ButtonsRoundedArrowed>Filter</ButtonsRoundedArrowed>
-        </HeaderGroup>
-
-        <HeaderGroup>
-          <SearchInput />
-          <Notification />
-          <Avatar />
-        </HeaderGroup>
-      </KanbanHeader>
+      {KanbanHeader()}
       <KanbanBody>
         {cardController.columnList.map(({ title, cardList }, idx) => (
           <Column

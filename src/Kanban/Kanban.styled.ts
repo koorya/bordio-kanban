@@ -6,7 +6,7 @@ export const KanbanContainer = styled.div`
   flex-direction: column;
 `;
 
-export const KanbanHeader = styled.div`
+export const KanbanHeaderStyled = styled.div`
   flex-basis: 80px;
   background: #ffffff;
   box-shadow: 0px 2px 4px #f0f1f2;
@@ -46,11 +46,6 @@ export const ButtonsRounded = styled.div`
   flex: none;
   order: 0;
   flex-grow: 0;
-`;
-
-export const ButtonsRoundedArrowed = styled(ButtonsRounded)`
-  background: #f5f8fa;
-  color: #222222;
 `;
 
 export const KanbanBody = styled.div`

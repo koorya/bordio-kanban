@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDrop } from "react-dnd";
+import { UserContext } from "../../Context";
 import { CardMover, CardType } from "../controller/CardController";
 import { Card } from "./Card";
 
@@ -29,7 +30,7 @@ export const Column = ({
       cardMover.moveCardToColumn(item, title);
     },
   }));
-
+  const { isDevMode } = useContext(UserContext);
   return (
     <ColumnStyled>
       <ColumnTitle cnt={`${cardList.length}`}>{title}</ColumnTitle>
@@ -43,7 +44,7 @@ export const Column = ({
             isDragging={isDragging}
           />
         ))}
-        {isDragging && <DnDColumnMask ref={drop} />}
+        {isDragging && <DnDColumnMask isDevMode={isDevMode} ref={drop} />}
       </ColumnBody>
     </ColumnStyled>
   );
