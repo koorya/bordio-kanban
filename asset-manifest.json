@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/bordio-kanban/static/js/main.b4e2ead1.js",
+    "index.html": "/bordio-kanban/index.html",
+    "main.b4e2ead1.js.map": "/bordio-kanban/static/js/main.b4e2ead1.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b4e2ead1.js"
+  ]
+}
