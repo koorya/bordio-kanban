@@ -1,8 +1,8 @@
 import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { AppStyled, SideBar, ToolColumn } from "./canban/App.styled";
-import { Canban } from "./canban/Canban";
+import { AppStyled, SideBar, ToolColumn } from "./Kanban/App.styled";
+import { Kanban } from "./Kanban/Kanban";
 import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <ToolColumn />
 
         <DndProvider backend={HTML5Backend}>
-          <Canban />
+          <Kanban />
         </DndProvider>
       </AppStyled>
     </>

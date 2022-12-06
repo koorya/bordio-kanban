@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const CanbanContainer = styled.div`
+export const KanbanContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
 `;
 
-export const CanbanHeader = styled.div`
+export const KanbanHeader = styled.div`
   flex-basis: 80px;
   background: #ffffff;
   box-shadow: 0px 2px 4px #f0f1f2;
@@ -53,7 +53,7 @@ export const ButtonsRoundedArrowed = styled(ButtonsRounded)`
   color: #222222;
 `;
 
-export const CanbanBody = styled.div`
+export const KanbanBody = styled.div`
   flex-grow: 1;
   display: flex;
   align-items: stretch;

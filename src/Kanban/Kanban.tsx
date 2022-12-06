@@ -2,20 +2,20 @@ import React, { useMemo } from "react";
 import { useDragDropManager, useDrop } from "react-dnd";
 import { CreateColumn } from "./AddColumn/CreateColumn";
 import {
-  CanbanBody,
-  CanbanContainer,
-  CanbanHeader,
+  KanbanBody,
+  KanbanContainer,
+  KanbanHeader,
   ButtonsRounded,
   ButtonsRoundedArrowed,
   HeaderGroup,
   Avatar,
   SearchInput,
   Notification,
-} from "./Canban.styled";
+} from "./Kanban.styled";
 import { Column } from "./Column/Column";
 import { getCardController } from "./controller/CardController";
 
-export const Canban = () => {
+export const Kanban = () => {
   const dndManager = useDragDropManager();
 
   const [, drop] = useDrop(() => ({
@@ -30,11 +30,11 @@ export const Canban = () => {
   const columnCtn = cardController.columnList.length;
 
   return (
-    <CanbanContainer ref={drop}>
-      <CanbanHeader>
+    <KanbanContainer ref={drop}>
+      <KanbanHeader>
         <HeaderGroup>
           <ButtonsRounded>+ Add new</ButtonsRounded>
-          <ButtonsRoundedArrowed>Canban</ButtonsRoundedArrowed>
+          <ButtonsRoundedArrowed>Kanban</ButtonsRoundedArrowed>
           <ButtonsRoundedArrowed>Filter</ButtonsRoundedArrowed>
         </HeaderGroup>
 
@@ -43,8 +43,8 @@ export const Canban = () => {
           <Notification />
           <Avatar />
         </HeaderGroup>
-      </CanbanHeader>
-      <CanbanBody>
+      </KanbanHeader>
+      <KanbanBody>
         {cardController.columnList.map(({ title, cardList }, idx) => (
           <Column
             cardMover={cardController}
@@ -56,7 +56,7 @@ export const Canban = () => {
           ></Column>
         ))}
         <CreateColumn></CreateColumn>
-      </CanbanBody>
-    </CanbanContainer>
+      </KanbanBody>
+    </KanbanContainer>
   );
 };
